@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: Research & Teaching
+navKey: teaching
+permalink: /teaching/
+crumbs: [{ label: "Research & Teaching" }]
+---
+{% import "macros.njk" as m %}
+<section class="page-head">
+  <h1 class="title">Research &amp; Teaching</h1>
+</section>
+
+<section>
+  <div class="sec-title"><h2>Current positions</h2></div>
+  <div class="clip">
+    <div class="courses">
+      {%- for c in teaching.current %}
+      <div class="course{% if c.wide %} wide{% endif %}"><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗</a>{% endif %}</p>
+        {%- if c.groups %}<dl class="review">{% for g in c.groups %}<dt class="caps">{{ g.label }}</dt><dd>{{ g.text }}{% if g.url %} <a class="ext" href="{{ g.url }}">Website ↗</a>{% endif %}</dd>{% endfor %}</dl>{% endif -%}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-title"><h2>Research interests</h2></div>
+  <div class="clip">
+    <div class="courses lines">
+      {%- for l in teaching.lines %}
+      <div class="course line">{{ m.lines(loop.index0) }}<div class="txt"><span class="caps">{{ "0" if loop.index < 10 }}{{ loop.index }}</span><h3>{{ l.title }}</h3><p>{{ l.text }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-title"><h2>PhD &amp; Master’s Supervision</h2></div>
+  <ul class="rows">
+    {%- for c in teaching.supervision %}
+    <li><span class="caps">{{ c.years }}</span><div><h3>{{ c.title }}</h3><p>{{ c.detail }}</p></div></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <div class="sec-title"><h2>Courses</h2></div>
+  <p class="sec-intro">{{ teaching.intro }}</p>
+  <ul class="rows">
+    {%- for c in teaching.courses %}
+    <li><span class="caps">{{ c.years }}</span><div><h3>{{ c.name }}</h3><p>{{ c.programme }}</p></div></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <div class="sec-title"><h2>Past positions</h2></div>
+  <ul class="rows">
+    {%- for c in teaching.past %}
+    <li><span class="caps">{{ c.years }}</span><div><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗</a>{% endif %}</p></div></li>
+    {%- endfor %}
+  </ul>
+</section>

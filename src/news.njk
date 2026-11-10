@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: News
+navKey: news
+permalink: /news/
+crumbs: [{ label: "News" }]
+---
+{% import "macros.njk" as m %}
+<section class="page-head">
+  <h1 class="title">News</h1>
+</section>
+<section>
+  <ul class="news big">
+    {%- for n in collections.news %}
+    <li>
+      <time class="caps" datetime="{{ n.date | isoDate }}">{{ n.date | monthYear }}</time>
+      <a href="{{ n.url }}"><span><h3>{{ n.data.title }}</h3>{% if n.data.summary %}<p>{{ n.data.summary }}</p>{% endif %}</span></a>
+      {{ m.media(n.data.cover, "", loop.index0) }}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

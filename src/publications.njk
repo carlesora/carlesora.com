@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Publications
+navKey: publications
+permalink: /publications/
+crumbs: [{ label: "Publications" }]
+summary: Books, journal articles, book chapters, conference papers and essays.
+---
+{% import "macros.njk" as m %}
+<section class="page-head">
+  <h1 class="title">Publications</h1>
+  <p class="intro">{{ summary }}</p>
+</section>
+{%- set counts = [["article", "articles", "article"], ["chapter", "book chapters", "book chapter"], ["book", "books", "book"], ["conference", "conference proceedings", "conference proceeding"], ["other", "essays", "essay"], ["thesis", "theses", "PhD thesis"]] %}
+<p class="pub-counts caps">{{ publications | length }} publications
+  {%- for c in counts %}{% set n = publications | countType(c[0]) %}{% if n %} · {{ n }} {{ c[1] if n > 1 else c[2] }}{% endif %}{% endfor %}</p>
+<section>
+  {%- set labels = { "book": "Books", "article": "Articles", "chapter": "Chapters", "conference": "Conference", "thesis": "Thesis", "other": "Essays" } %}
+  <div class="filters" role="group" aria-label="Filter publications" data-target=".pub">
+    <button aria-pressed="true" data-f="all">All</button>
+    {%- for t in ["book", "article", "chapter", "conference", "other"] %}
+    <button aria-pressed="false" data-f="{{ t }}">{{ labels[t] }}</button>
+    {%- endfor %}
+  </div>
+  {%- for g in publications | byYear %}
+  <div class="year-group" data-group>
+    <h3>{{ g.year }}</h3>
+    <ul>
+      {%- for p in g.items %}
+      {{ m.pub(p) }}
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endfor %}
+</section>
+<section class="metrics-sec">
+  {{ m.metrics(site, true) }}
+</section>

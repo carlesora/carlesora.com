@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/post.njk",
+  "permalink": "/news/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "crumbs": [{ "label": "News", "url": "/news/" }, { "label": "{{ title }}" }]
+  }
+}

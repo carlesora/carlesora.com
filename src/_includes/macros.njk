@@ -1,0 +1,61 @@
+{# ---------- Decorative line drawings (placeholders when there is no image) ---------- #}
+{% macro lines(i) %}
+{%- set L = [
+  [[0,0,100,100],[0,100,100,0]],
+  [[20,0,20,100],[20,100,100,20]],
+  [[0,60,100,60],[10,0,70,100]],
+  [[0,100,60,0],[60,0,60,100]],
+  [[0,30,100,30],[50,30,50,100]],
+  [[0,0,100,70],[100,70,100,100]]
+] -%}
+<svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+{%- for s in L[i % 6] %}<line x1="{{ s[0] }}" y1="{{ s[1] }}" x2="{{ s[2] }}" y2="{{ s[3] }}"/>{% endfor -%}
+</svg>
+{%- endmacro %}
+
+{# ---------- Image, or line drawing if there is none ---------- #}
+{% macro media(src, alt, i, cls="") %}
+<div class="ph {{ cls }}">
+  {%- if src %}<img src="{{ src }}" alt="{{ alt }}" loading="lazy">{% else %}{{ lines(i) }}{% endif -%}
+</div>
+{%- endmacro %}
+
+{# ---------- Project card (grids on home and /projects/) ---------- #}
+{% macro projectCard(p, i) %}
+<a class="project" href="{{ p.url }}" data-t="{{ p.data.type }}">
+  {#- Cards with an image also carry the line drawing underneath: sora.js hides half of the images at random. #}
+  <div class="ph img">
+    {{- lines(i) }}{% if p.data.cover %}<img src="{{ p.data.cover }}" alt="{{ p.data.title }}" loading="lazy">{% endif -%}
+  </div>
+  <div class="meta"><div><h3>{{ p.data.title | safe }}</h3><p class="cat">{{ p.data.category }}</p></div><span class="caps">{{ p.data.period or p.data.year }}</span></div>
+</a>
+{%- endmacro %}
+
+{# ---------- Publication row ---------- #}
+{% macro pub(p) %}
+{%- set pubLabels = { "book": "Book", "article": "Article", "chapter": "Chapter", "conference": "Conference", "thesis": "Thesis", "other": "Essay" } -%}
+<li class="pub" data-t="{{ p.type }}">
+  <span class="year">{{ p.year }}</span>
+  <div>
+    <h4>{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h4>
+    <p>{{ p.authors }}{% if p.venue %} — <i>{{ p.venue }}</i>{% endif %}{% if p.url %} <a class="ext" href="{{ p.url }}">Link ↗</a>{% endif %}</p>
+  </div>
+  <span class="type caps">{{ pubLabels[p.type] }}</span>
+</li>
+{%- endmacro %}
+
+{#- Citation metrics (site.json → metrics). Shown only when the h-index is filled in. #}
+{% macro metrics(site, compact=false) -%}
+{%- set mt = site.metrics -%}
+{%- set scholar = "" -%}{%- for l in site.links %}{% if l.label == "Google Scholar" %}{% set scholar = l.url %}{% endif %}{% endfor -%}
+{%- if mt and mt.items[0].value -%}
+{%- if compact -%}
+<p class="metrics-line caps">{% for x in mt.items %}{% if x.value %}{{ x.label }} {{ x.value }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %} — {% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗</a>{% else %}{{ mt.source }}{% endif %}</p>
+{%- else -%}
+<div class="clip"><dl class="metrics">
+  {%- for x in mt.items %}{% if x.value %}<div><dt>{{ x.label }}</dt><dd>{{ x.value }}</dd></div>{% endif %}{% endfor %}
+  <div class="src"><dt>Source</dt><dd>{% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗</a>{% else %}{{ mt.source }}{% endif %}{% if mt.updated %}<span>Updated {{ mt.updated }}</span>{% endif %}</dd></div>
+</dl></div>
+{%- endif -%}
+{%- endif -%}
+{%- endmacro %}

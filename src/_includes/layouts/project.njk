@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+navKey: projects
+---
+{% import "macros.njk" as m %}
+<section class="page-head">
+  <h1 class="title title-md">{{ title | safe }}</h1>
+  {% if summary %}<p class="intro">{{ summary | safe }}</p>{% endif %}
+</section>
+
+<div class="clip">
+  <dl class="p-meta">
+    <div><dt>Year</dt><dd>{{ period or year }}</dd></div>
+    <div><dt>Type</dt><dd>{{ category }}</dd></div>
+    {%- for f in facts %}
+    <div><dt>{{ f.label }}</dt><dd>{{ f.value | safe }}</dd></div>
+    {%- endfor %}
+    {%- if links and links.length %}
+    <div><dt>Links</dt><dd>{% for l in links %}<a href="{{ l.url }}">{{ l.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</dd></div>
+    {%- endif %}
+  </dl>
+</div>
+
+{% if cover %}<figure class="p-cover"><img src="{{ cover }}" alt="{{ title | striptags }}"></figure>{% endif %}
+
+<div class="p-body">
+  <h2>Overview</h2>
+  <div class="prose">{{ content | safe }}</div>
+</div>
+
+{% if gallery and gallery.length %}
+<div class="clip">
+  <div class="gallery">
+    {%- for img in gallery %}
+    <figure><img src="{{ img }}" alt="{{ title | striptags }} — image {{ loop.index }}" loading="lazy"></figure>
+    {%- endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if video %}
+<div class="video">
+  {%- if video.vimeo %}
+  <iframe src="https://player.vimeo.com/video/{{ video.vimeo }}?dnt=1" title="{{ title | striptags }} — video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
+  {%- elif video.youtube %}
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ video.youtube }}" title="{{ title | striptags }} — video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
+  {%- endif %}
+</div>
+{% endif %}
+
+{% if related and related.length %}
+<div class="p-body">
+  <h2>{{ relatedTitle or "Press &amp; publications" | safe }}</h2>
+  <ul class="plain-list">
+    {%- for r in related %}
+    <li>{% if r.url %}<a href="{{ r.url }}">{{ r.title | safe }}</a>{% else %}{{ r.title | safe }}{% endif %}</li>
+    {%- endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if credits and credits.length %}
+<div class="clip">
+  <ul class="credits">
+    {%- for c in credits %}
+    <li><b>{{ c.role }}</b><span>{{ c.name }}</span></li>
+    {%- endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{%- set prev = collections.projects | getPreviousCollectionItem(page) %}
+{%- set next = collections.projects | getNextCollectionItem(page) %}
+<nav class="pager caps" aria-label="More projects">
+  {% if prev %}<a href="{{ prev.url }}"><span>← Newer</span><span>{{ prev.data.title | safe }}</span></a>{% else %}<a href="/projects/"><span>←</span><span>All projects</span></a>{% endif %}
+  {% if next %}<a href="{{ next.url }}"><span>Older →</span><span>{{ next.data.title | safe }}</span></a>{% else %}<a href="/projects/"><span>→</span><span>All projects</span></a>{% endif %}
+</nav>

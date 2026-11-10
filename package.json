@@ -1,0 +1,13 @@
+{
+  "name": "carlesora.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve --port=8080",
+    "build": "eleventy",
+    "orcid": "node scripts/orcid.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}

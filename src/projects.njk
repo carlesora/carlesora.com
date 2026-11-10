@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Projects
+navKey: projects
+permalink: /projects/
+crumbs: [{ label: "Projects" }]
+summary: Research and transfer projects, artworks, performances, interactive designs and curatorial work.
+---
+{% import "macros.njk" as m %}
+<section class="page-head">
+  <h1 class="title">Projects</h1>
+  <p class="intro">{{ summary }}</p>
+</section>
+<section>
+  {%- set labels = { "research": "Research", "art": "Visual arts &amp; theater", "design": "Interactive design", "curation": "Curation", "transfer": "Transfer" } %}
+  <div class="filters" role="group" aria-label="Filter projects" data-target=".project" data-default="research">
+    <button aria-pressed="true" data-f="all">All</button>
+    {%- for t in ["research", "transfer", "art", "design", "curation"] %}
+    <button aria-pressed="false" data-f="{{ t }}">{{ labels[t] | safe }}</button>
+    {%- endfor %}
+  </div>
+  <div class="clip">
+    <div class="projects cols-3">
+      {%- for p in collections.projects %}
+      {{ m.projectCard(p, loop.index0) }}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+{
+  "name": "Carles Sora-Domenjó",
+  "title": "Sora-Domenjó",
+  "logoTop": "SORA-DOMENJÓ",
+  "logoBottom": "",
+  "url": "https://carlesora.com",
+  "affiliation": "CITM — UPC BarcelonaTech",
+  "description": "Researcher, new media artist and interactive designer. Digital design, new narratives and creative tech.",
+  "cv": "",
+  "links": [
+    {
+      "label": "Email",
+      "url": "mailto:carles@csora.org"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=_4QwDSYAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0003-2761-2384"
+    },
+    {
+      "label": "LinkedIn",
+      "url": ""
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/carlesora"
+    }
+  ],
+  "nav": [
+    {
+      "key": "about",
+      "label": "About",
+      "url": "/#about"
+    },
+    {
+      "key": "projects",
+      "label": "Projects",
+      "url": "/projects/"
+    },
+    {
+      "key": "publications",
+      "label": "Publications",
+      "url": "/publications/"
+    },
+    {
+      "key": "teaching",
+      "label": "Research & Teaching",
+      "url": "/teaching/"
+    },
+    {
+      "key": "news",
+      "label": "News",
+      "url": "/news/"
+    }
+  ],
+  "metrics": {
+    "source": "Google Scholar",
+    "updated": "Nov 2026",
+    "items": [
+      {
+        "label": "h-index",
+        "value": "13"
+      },
+      {
+        "label": "i10-index",
+        "value": "13"
+      },
+      {
+        "label": "Citations",
+        "value": "615"
+      }
+    ]
+  }
+}

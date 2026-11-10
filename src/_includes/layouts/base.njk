@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title and not isHome %}{{ title | striptags }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ (summary or site.description) | striptags }}">
+<meta property="og:title" content="{{ (title or site.title) | striptags }}">
+<meta property="og:description" content="{{ (summary or site.description) | striptags }}">
+{% if cover %}<meta property="og:image" content="{{ site.url }}{{ cover }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/sora.css">
+</head>
+<body{% if isHome %} class="home"{% endif %}>
+
+<aside class="side">
+  <div class="logo">
+    <a href="/">{{ site.logoTop }}</a>
+    <div class="mark"><svg class="lines" viewBox="0 0 40 72" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="72" x2="40" y2="0"/></svg></div>
+  </div>
+  <nav class="nav caps" aria-label="Main">
+    {%- for item in site.nav %}
+    <a href="{{ item.url }}" data-section="{{ item.key }}"{% if item.key == navKey %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+  <div class="side-foot">
+    <span>{{ site.logoBottom }}</span>
+    <button id="theme" aria-label="Invert colours">◐</button>
+  </div>
+</aside>
+
+<div class="main" id="top">
+  <div class="strip caps{% if crumbs %} crumbs{% endif %}">
+    {%- if crumbs %}
+    <span><a href="/">Home</a>{% for c in crumbs %} / {% if c.url %}<a href="{{ c.url }}">{{ c.label | safe }}</a>{% else %}<span>{{ c.label | safe }}</span>{% endif %}{% endfor %}</span>
+    {%- else %}
+    <span>{{ site.affiliation }}</span>
+    {%- endif %}
+    {% if site.cv %}<a href="{{ site.cv }}">CV (PDF)</a>{% endif %}
+  </div>
+
+  {{ content | safe }}
+
+  <footer>
+    {%- for l in site.links %}{% if l.url %}<a href="{{ l.url }}">{{ l.label }}</a>{% endif %}{% endfor %}
+    <span>© {{ build.year }} {{ site.name }}</span>
+  </footer>
+</div>
+
+<script src="/assets/sora.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+{
+  "intro": "I gave my first —reckless— lecture in an official undergraduate programme in 2002, when I was only 22. Since then, I have taught in several programmes and universities in Catalonia.",
+  "current": [
+    {
+      "role": "Director and Associate Professor",
+      "where": "CITM — Center for Image and Multimedia Technologies, UPC",
+      "url": "https://www.citm.upc.edu/"
+    },
+    {
+      "role": "Coordinator and founder",
+      "where": "DICODE — Digital Culture and Creative Technologies research group, CITM-UPC. Recognised as SGR 2021 and SGR 2025 (A)",
+      "url": "https://www.citm.upc.edu/cat/recerca/grup/"
+    },
+    {
+      "role": "Reviewer",
+      "where": "Editorial board and peer review for journals, conferences and research agencies.",
+      "wide": true,
+      "groups": [
+        {
+          "label": "Board member",
+          "text": "Humanities and Social Sciences Communications (Nature).",
+          "url": "https://www.nature.com/palcomms/"
+        },
+        {
+          "label": "Journals",
+          "text": "Anagramas, Artnodes, Communication & Society, Convergence, Cuadernos.info, Estudis Escènics (Institut del Teatre), Frontiers in Psychology, Hipertext.net, Humanities and Social Sciences Communications, Journal of Interactive Narrative (ARDIN), Journalism, Miguel Hernández Communication Journal, Quaderns, Scientific Reports, Signa, Trípodos and Zer (2014–)."
+        },
+        {
+          "label": "Conferences",
+          "text": "Scientific committee of the EAI ArtsIT Conference, Interactivity & Game Creation (2024, 2025, 2026); International Programme Committee of the 27th International Symposium on Electronic Art, ISEA (2022); Interaction Design and Children, ACM SIGCHI (2017)."
+        },
+        {
+          "label": "Agencies",
+          "text": "ANEP — Agencia Nacional de Evaluación y Prospectiva (2014–); Horizon Europe, European Commission (2022–); Austrian Science Fund (FWF) (2025); Junta de Extremadura, Consejería de Ciencia (2025); European Media and Immersion Lab (2024); HERA — Humanities in the European Research Area (2018); Estonian Research Council (2017); CreatiFI Creative Ring Challenge, EU (2016)."
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "title": "Interactive and immersive documentary",
+      "text": "Web documentary, i-docs and VR/XR non-fiction: new formats, interaction and social impact."
+    },
+    {
+      "title": "Digital temporalities",
+      "text": "The philosophy and sociology of time in interactive audiovisual works and digital art."
+    },
+    {
+      "title": "Creative technologies and AI",
+      "text": "Artificial intelligence and real-time technologies in music, film editing and artistic creation."
+    },
+    {
+      "title": "Games and playful design",
+      "text": "Indie video games, gamification and play as a tool for cities, education and culture."
+    },
+    {
+      "title": "Ethics of interaction design",
+      "text": "User-centred design, engagement and the ethics of mobile applications."
+    },
+    {
+      "title": "Digital culture and heritage",
+      "text": "Technology, the performing arts, museums and cultural innovation: the role of technology in society."
+    }
+  ],
+  "courses": [
+    {
+      "name": "Seminar on Virtual Reality in Theatre",
+      "programme": "Postgraduate in Staging and Digital Technology, Institut del Teatre",
+      "years": "2021–2022"
+    },
+    {
+      "name": "End-of-Degree Workshop on Interactive Communication",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2012–"
+    },
+    {
+      "name": "Digital Culture",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2008–"
+    },
+    {
+      "name": "Design and Scripting of Interactive Cultural Projects",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2010–"
+    },
+    {
+      "name": "Interactive Narratives",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2015"
+    },
+    {
+      "name": "Design of Interactive Audiovisual Projects",
+      "programme": "BA Design, BAU/UVic",
+      "years": "2012–2016"
+    },
+    {
+      "name": "3D Animation",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2009–2016"
+    },
+    {
+      "name": "Real-time Audiovisual Programming (Max/MSP/Jitter)",
+      "programme": "Master in Digital Arts, UPF",
+      "years": "2007–2015"
+    },
+    {
+      "name": "Digital Theatre",
+      "programme": "Stage Design, ELISAVA",
+      "years": "2011–2015"
+    },
+    {
+      "name": "Mathematics for Design (Processing)",
+      "programme": "BA Design, ELISAVA",
+      "years": "2010–2015"
+    },
+    {
+      "name": "Digital Technologies and Cultural Heritage",
+      "programme": "Master in Cultural Heritage Management, UB",
+      "years": "2010–2013"
+    },
+    {
+      "name": "Interactive Video",
+      "programme": "Master in Digital Video, UPF",
+      "years": "2010–2011"
+    },
+    {
+      "name": "Interactive Video for Performing Arts",
+      "programme": "Postgraduate in Digital Technologies for the Stage, UPF",
+      "years": "2010"
+    },
+    {
+      "name": "Interactive Interfaces for Digital Arts",
+      "programme": "Master in Digital Arts, UPF",
+      "years": "2006–2009"
+    },
+    {
+      "name": "Video Design and Video Art",
+      "programme": "BA Audiovisual Communication, UPF",
+      "years": "2009"
+    },
+    {
+      "name": "Infographic Techniques",
+      "programme": "BA Public Relations, UPF",
+      "years": "2008–2010"
+    },
+    {
+      "name": "Real-time Video and Interactive Systems",
+      "programme": "BSc Multimedia, CITM-UPC",
+      "years": "2008"
+    },
+    {
+      "name": "Multimedia and Digital Arts",
+      "programme": "Visual Culture Studies, UB",
+      "years": "2002–2004"
+    }
+  ],
+  "supervision": [
+    {
+      "years": "In progress",
+      "title": "Temps i engagement en aplicacions de dispositius mòbils",
+      "detail": "PhD thesis by Clara Palomar. Universitat Politècnica de València. Co-supervised with Ariadna Fernández."
+    },
+    {
+      "years": "2025",
+      "title": "La sintaxis en el cine inmersivo. Las posibilidades plásticas y expresivas del montaje en la Cinematic Virtual Reality",
+      "detail": "PhD thesis by José María Cabello Bárzanas. Universitat Pompeu Fabra. Co-supervised with Rafael Pedraza. Excellent cum laude."
+    },
+    {
+      "years": "2024",
+      "title": "Edición cinematográfica e inteligencia artificial: herramientas de análisis con modelos de aprendizaje profundo",
+      "detail": "PhD thesis by Jorge Caballero Ramos. Universitat Pompeu Fabra. Co-supervised with Lluís Codina. Excellent cum laude."
+    },
+    {
+      "years": "2013",
+      "title": "Master's thesis, International Master in Arts and Design",
+      "detail": "Luciana María Renner Macellari. Universidad Nacional Autónoma de México (UNAM)."
+    },
+    {
+      "years": "2010–2015",
+      "title": "Master in Digital Arts",
+      "detail": "Steven Bolaños Arango, Juan Felipe Gómez Celis, Citlali Hernández, Nicolás Villa, Sebastián González, Javier Chávarri, Claudia Oliveira and Carlos Castro. Universitat Pompeu Fabra."
+    }
+  ],
+  "past": [
+    {
+      "role": "Vice-Dean (Academic Coordinator) of the BA Audiovisual Communication, Faculty of Communication",
+      "where": "Universitat Pompeu Fabra",
+      "years": "2018–2020"
+    },
+    {
+      "role": "Fulbright Postdoctoral Fellow",
+      "where": "MIT Open Documentary Lab, Comparative Media Studies, MIT",
+      "years": "2017–2019",
+      "url": "https://opendoclab.mit.edu/presents/carles-sora/"
+    },
+    {
+      "role": "Founder and director",
+      "where": "UPF Starting Lab incubator",
+      "years": "2016–2018"
+    },
+    {
+      "role": "Assistant Professor of Digital Culture and Interactive Narratives",
+      "where": "Universitat Pompeu Fabra",
+      "years": "2009–2020"
+    },
+    {
+      "role": "Lecturer of Digital Media",
+      "where": "BAU, UVic",
+      "years": "2012–2016"
+    },
+    {
+      "role": "Director, Digital Technologies for the Stage graduate programme",
+      "where": "IDEC, UPF",
+      "years": "2009–2010"
+    },
+    {
+      "role": "Lecturer, Digital Arts Graduate Programme",
+      "where": "UPF",
+      "years": "2007–2015"
+    },
+    {
+      "role": "Visiting Lecturer of Creative Coding",
+      "where": "Design Bachelor, ELISAVA",
+      "years": "2010–2015"
+    },
+    {
+      "role": "Visiting Lecturer, Stage Design Programme",
+      "where": "ELISAVA",
+      "years": "2012–2015"
+    },
+    {
+      "role": "Founder",
+      "where": "Touché — interactive exhibition studio",
+      "years": "2008–2011"
+    },
+    {
+      "role": "Communication lead",
+      "where": "ArtFutura festival",
+      "years": "2002–2005"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+isHome: true
+title: Digital design, new narratives & creative tech
+---
+{% import "macros.njk" as m %}
+<section>
+  <h1 class="title">Digital <em>design</em>,<br>new narratives<br>&amp; creative tech.</h1>
+  <p class="lede">Carles Sora-Domenjó is a researcher, new media artist and interactive designer exploring new forms of storytelling, performance and visual arts — where technology, audiovisual media and culture meet.</p>
+  <div class="band" aria-hidden="true">
+    <div>{{ m.lines(0) }}</div><div>{{ m.lines(4) }}</div><div>{{ m.lines(3) }}</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-title"><h2>About</h2>{% if site.cv %}<a class="caps" href="{{ site.cv }}">Download CV →</a>{% endif %}</div>
+  <div class="about">
+    <div class="text">
+      <p>Carles Sora-Domenjó is an interdisciplinary scholar whose creative and critical research explores the intersections of technology, audiovisual media, culture and the arts. He is Director and Associate Professor of the Center for Image and Multimedia Technologies (CITM), the digital creativity centre of Universitat Politècnica de Catalunya (UPC) in Terrassa.</p>
+      <p>He was Assistant Professor of digital culture and interactive narratives at Universitat Pompeu Fabra (UPF), Fulbright Postdoctoral Fellow at the MIT Open Documentary Lab (2017–2019), and founder of the UPF Starting Lab incubator. His PhD dissertation developed a framework on digital time and interactive narratives.</p>
+      <p>Since 2004 he has worked on more than 25 interactive projects for visual arts, performance and scientific dissemination, presented in Quebec City, Paris, Buenos Aires, Mexico City, Bristol, Lisbon and Lugano, among others. His current research focuses on critical media theory, the effects of immersive media, interactive documentaries and emerging automatic narratives.</p>
+    </div>
+    <ul class="facts">
+      <li class="portrait"><img src="/img/portrait-about.jpg" alt="Carles Sora-Domenjó speaking at a talk"></li>
+      <li><b>Fulbright Postdoc, MIT Open Documentary Lab</b><span>2017–2019</span></li>
+      <li><b>PhD Digital Media Studies, UPF</b><span>2015</span></li>
+      <li><b>MSc Cognitive Systems &amp; Interactive Media, UPF</b><span>2009</span></li>
+      <li><b>BSc Multimedia, UPC</b><span>2004</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-title"><h2>Projects</h2><a class="caps" href="/projects/">All projects →</a></div>
+  <div class="clip">
+    <div class="projects">
+      {%- for p in collections.projects | limit(4) %}
+      {{ m.projectCard(p, loop.index0) }}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="sec-title"><h2>Publications</h2><a class="caps" href="/publications/">All publications →</a></div>
+  {{ m.metrics(site, true) }}
+  <ul>
+    {%- for p in publications | limit(4) %}
+    {{ m.pub(p) }}
+    {%- endfor %}
+  </ul>
+</section>
+
+<section id="teaching">
+  <div class="sec-title"><h2>Research &amp; Teaching</h2><a class="caps" href="/teaching/">Research &amp; Teaching →</a></div>
+  <div class="clip">
+    <div class="courses">
+      {%- for c in teaching.current | limit(3) %}
+      <div class="course"><span class="caps">Current</span><h3>{{ c.role }}</h3><p>{{ c.where }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="sec-title"><h2>News</h2><a class="caps" href="/news/">All news →</a></div>
+  <ul class="news">
+    {%- for n in collections.news | limit(3) %}
+    <li><time class="caps" datetime="{{ n.date | isoDate }}">{{ n.date | monthYear }}</time><span><a href="{{ n.url }}">{{ n.data.title }}</a></span></li>
+    {%- endfor %}
+  </ul>
+</section>
