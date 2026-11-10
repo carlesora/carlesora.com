@@ -18,7 +18,7 @@
 <aside class="side">
   <div class="logo">
     <a href="/">{{ site.logoTop }}</a>
-    <div class="mark"><svg class="lines" viewBox="0 0 40 72" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="72" x2="40" y2="0"/></svg></div>
+    <div class="mark"><svg class="lines" id="mark" viewBox="0 0 40 72" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="72" x2="40" y2="0"/></svg></div>
   </div>
   <nav class="nav caps" aria-label="Main">
     {%- for item in site.nav %}
@@ -35,8 +35,6 @@
   <div class="strip caps{% if crumbs %} crumbs{% endif %}">
     {%- if crumbs %}
     <span><a href="/">Home</a>{% for c in crumbs %} / {% if c.url %}<a href="{{ c.url }}">{{ c.label | safe }}</a>{% else %}<span>{{ c.label | safe }}</span>{% endif %}{% endfor %}</span>
-    {%- else %}
-    <span>{{ site.affiliation }}</span>
     {%- endif %}
     {% if site.cv %}<a href="{{ site.cv }}">CV (PDF)</a>{% endif %}
   </div>

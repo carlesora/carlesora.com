@@ -161,4 +161,4 @@ npm start        # vista prèvia a http://localhost:8080
 - [ ] Enllaç de LinkedIn i el PDF del CV (a `site.json`).
 - [ ] Projectes sense imatge (surten amb línies): posar-ne a `src/img/projects/<nom>.jpg`. Revisar els textos dels projectes nous.
 - [ ] *PrometZeus* (2004), al CV però encara no al web.
-- [ ] Correu de contacte: ara és el del document antic (carles@csora.org).
+- [x] Correu de contacte: targeta Contact a l’About (`contact` a `site.json`).

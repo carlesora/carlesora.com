@@ -1,17 +1,13 @@
 {
   "name": "Carles Sora-Domenjó",
   "title": "Sora-Domenjó",
-  "logoTop": "SORA-DOMENJÓ",
+  "logoTop": "CARLESORA",
   "logoBottom": "",
   "url": "https://carlesora.com",
   "affiliation": "CITM — UPC BarcelonaTech",
   "description": "Researcher, new media artist and interactive designer. Digital design, new narratives and creative tech.",
   "cv": "",
   "links": [
-    {
-      "label": "Email",
-      "url": "mailto:carles@csora.org"
-    },
     {
       "label": "Google Scholar",
       "url": "https://scholar.google.com/citations?user=_4QwDSYAAAAJ"
@@ -73,5 +69,6 @@
         "value": "615"
       }
     ]
-  }
+  },
+  "contact": "carlesora at proton dot me"
 }

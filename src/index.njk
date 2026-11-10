@@ -5,7 +5,11 @@ title: Digital design, new narratives & creative tech
 ---
 {% import "macros.njk" as m %}
 <section>
-  <h1 class="title">Digital <em>design</em>,<br>new narratives<br>&amp; creative tech.</h1>
+  {#- Generative background (see sora.css "Generative backgrounds"): on every visit sora.js picks one of the
+      variants in data-variants and places the circles at random. Remove variants from the list to leave them out. #}
+  <div class="bg b hero" data-gen data-variants="a b cbw d e f"><span class="c c1" aria-hidden="true"></span><span class="c c2" aria-hidden="true"></span>
+    <h1 class="title">Digital <em>design</em>,<br>new narratives<br>&amp; creative tech.</h1>
+  </div>
   <p class="lede">Carles Sora-Domenjó is a researcher, new media artist and interactive designer exploring new forms of storytelling, performance and visual arts — where technology, audiovisual media and culture meet.</p>
   <div class="band" aria-hidden="true">
     <div>{{ m.lines(0) }}</div><div>{{ m.lines(4) }}</div><div>{{ m.lines(3) }}</div>
@@ -26,6 +30,9 @@ title: Digital design, new narratives & creative tech
       <li><b>PhD Digital Media Studies, UPF</b><span>2015</span></li>
       <li><b>MSc Cognitive Systems &amp; Interactive Media, UPF</b><span>2009</span></li>
       <li><b>BSc Multimedia, UPC</b><span>2004</span></li>
+      {%- if site.contact %}
+      <li class="contact"><b>Contact</b><span>{{ site.contact }}</span></li>
+      {%- endif %}
     </ul>
   </div>
 </section>

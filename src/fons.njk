@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Background tests
+permalink: /fons/
+eleventyExcludeFromCollections: true
+crumbs: [{ label: "Background tests" }]
+---
+{#- Test page (not linked in the menu): all the generative background variants.
+    Styles live in sora.css ("Generative backgrounds"); sora.js places the circles at random. #}
+<style>
+  .fons .bg{min-height:440px;border-bottom:var(--rule)}
+  .fons .t{position:relative;padding:calc(var(--pad)*2) var(--pad) var(--pad);font-size:clamp(44px,7vw,108px);line-height:.92;letter-spacing:-.035em;font-weight:300}
+  .fons .lab{position:absolute;right:var(--pad);bottom:var(--pad);font-size:12px}
+  .fons .bar{display:flex;justify-content:space-between;align-items:center;gap:var(--pad);padding:var(--pad);border-bottom:var(--rule)}
+  .fons .bar button{font:inherit;background:none;color:inherit;border:var(--rule);padding:8px 14px;cursor:pointer;white-space:nowrap}
+  @media (max-width:860px){.fons .bg{min-height:340px}}
+</style>
+
+<section class="page-head">
+  <h1 class="title">Background tests</h1>
+</section>
+<div class="fons">
+  <div class="bar"><p>Every visit draws new circles. B is the one on the home page; the others are kept for later.</p>
+    <button type="button" class="caps" data-regen=".fons [data-gen]">Draw again</button></div>
+  {%- set title %}<h2 class="t">Digital design,<br>new narratives<br>&amp; creative tech.</h2>{% endset %}
+  {%- set circles %}<span class="c c1"></span><span class="c c2"></span>{% endset %}
+
+  <section class="bg b" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">B — Warm, soft (home)</span></section>
+  <section class="bg a" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">A — Warm, full</span></section>
+  <section class="bg cbw" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">C — Black &amp; white</span></section>
+  <section class="bg d" data-gen>
+    <svg class="gen" aria-hidden="true">
+      <defs><clipPath id="clipD"><circle/></clipPath></defs>
+      <circle class="lens" clip-path="url(#clipD)"/><circle class="ca"/><circle class="cb"/>
+    </svg>{{ title | safe }}<span class="lab caps">D — Lines + warm overlap</span></section>
+  <section class="bg e" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">E — Dark</span></section>
+  <section class="bg f" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">F — Small accent</span></section>
+</div>
