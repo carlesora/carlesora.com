@@ -1,5 +1,5 @@
 ---
-title: Stories Lab VR — Kosmopolis
+title: Stories Lab VR – Kosmopolis
 year: 2017
 type: curation
 category: Exhibition curation
@@ -8,10 +8,10 @@ cover: /img/projects/stories-lab-vr.png
 facts:
   - { label: Role, value: "Commissioner & advisor" }
   - { label: Venue, value: "CCCB, Barcelona" }
-  - { label: Production, value: "CCCB Lab — CCCB" }
+  - { label: Production, value: "CCCB Lab – CCCB" }
 credits:
   - { role: "Commissioner & advisor", name: Carles Sora }
-  - { role: Production, name: "CCCB Lab — CCCB" }
+  - { role: Production, name: "CCCB Lab – CCCB" }
 relatedTitle: Talks convened and moderated
 related:
   - { title: "Children’s narratives" }

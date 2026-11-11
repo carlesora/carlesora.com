@@ -7,7 +7,7 @@ summary: Modular online interactives on food and nutrition for student teachers.
 cover: /img/projects/alimentacio.png
 facts:
   - { label: Client, value: Universitat de Barcelona }
-  - { label: Production, value: "Interactive Communication group, IUA — UPF" }
+  - { label: Production, value: "Interactive Communication group, IUA – UPF" }
   - { label: Funding, value: "AGAUR (2006MQD00193)" }
 links:
   - { label: Website, url: "http://www.ub.edu/didactica_ciencies/mqd06/" }

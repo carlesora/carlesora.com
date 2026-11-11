@@ -35,10 +35,10 @@ crumbs: [{ label: "Background tests" }]
     <button type="button" class="caps" data-remondrian>Draw again</button></div>
   <div class="lm">
     {%- set props = [
-      ["m1", "1 — One colour cell", "Black lines cut the box into rectangles; one cell is coral."],
-      ["m2", "2 — Three warm cells (logo)", "Two or three lines, at most three columns and three rows; up to three cells in coral, orange and peach."],
-      ["m3", "3 — Coloured lines", "No fills: the lines themselves are coral and orange, a little thicker."],
-      ["m4", "4 — Grid over circles", "Two small overlapping discs under the black grid, echoing the backgrounds."]
+      ["m1", "1 – One colour cell", "Black lines cut the box into rectangles; one cell is coral."],
+      ["m2", "2 – Three warm cells (logo)", "Two or three lines, at most three columns and three rows; up to three cells in coral, orange and peach."],
+      ["m3", "3 – Coloured lines", "No fills: the lines themselves are coral and orange, a little thicker."],
+      ["m4", "4 – Grid over circles", "Two small overlapping discs under the black grid, echoing the backgrounds."]
     ] %}
     {%- for pr in props %}
     <div>
@@ -53,14 +53,14 @@ crumbs: [{ label: "Background tests" }]
   {%- set title %}<h2 class="t">Digital design,<br>new narratives<br>&amp; creative tech.</h2>{% endset %}
   {%- set circles %}<span class="c c1"></span><span class="c c2"></span>{% endset %}
 
-  <section class="bg b" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">B — Warm, soft (home)</span></section>
-  <section class="bg a" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">A — Warm, full</span></section>
-  <section class="bg cbw" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">C — Black &amp; white</span></section>
+  <section class="bg b" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">B – Warm, soft (home)</span></section>
+  <section class="bg a" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">A – Warm, full</span></section>
+  <section class="bg cbw" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">C – Black &amp; white</span></section>
   <section class="bg d" data-gen>
     <svg class="gen" aria-hidden="true">
       <defs><clipPath id="clipD"><circle/></clipPath></defs>
       <circle class="lens" clip-path="url(#clipD)"/><circle class="ca"/><circle class="cb"/>
-    </svg>{{ title | safe }}<span class="lab caps">D — Lines + warm overlap</span></section>
-  <section class="bg e" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">E — Dark</span></section>
-  <section class="bg f" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">F — Small accent</span></section>
+    </svg>{{ title | safe }}<span class="lab caps">D – Lines + warm overlap</span></section>
+  <section class="bg e" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">E – Dark</span></section>
+  <section class="bg f" data-gen>{{ circles | safe }}{{ title | safe }}<span class="lab caps">F – Small accent</span></section>
 </div>

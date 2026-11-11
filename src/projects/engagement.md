@@ -8,7 +8,7 @@ summary: "Technological innovation formats and processes to improve the user's e
 facts:
   - { label: "Role", value: "Researcher" }
   - { label: "Principal investigator", value: "Jordi Balló (UPF)" }
-  - { label: "Funding", value: "ACCIÓ — Comunitat MEDIA RIS3CAT" }
+  - { label: "Funding", value: "ACCIÓ – Comunitat MEDIA RIS3CAT" }
   - { label: "Partners", value: "UPF, Museu Nacional d’Art de Catalunya, Fundació Antoni Tàpies, Indissoluble, Mobile Media Content, Eurecat" }
 ---
 *Engagement* worked with museums, cultural centres and technology companies on new formats and processes to improve the visitor experience in museums and cultural centres.

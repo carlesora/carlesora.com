@@ -5,6 +5,11 @@ export default function (eleventyConfig) {
   // (e.g. carlesora.github.io/carlesora.com/ before the custom domain is set).
   eleventyConfig.addPlugin(HtmlBasePlugin);
 
+  // House style: en dash (–) instead of em dash (—) everywhere, including text that comes from ORCID
+  eleventyConfig.addTransform("en-dash", function (content) {
+    return (this.page.outputPath || "").endsWith(".html") ? content.replaceAll("—", "–") : content;
+  });
+
   // Files copied as-is
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/img");

@@ -32,7 +32,7 @@ navKey: projects
 <div class="clip">
   <div class="gallery">
     {%- for img in gallery %}
-    <figure><img src="{{ img }}" alt="{{ title | striptags }} — image {{ loop.index }}" loading="lazy"></figure>
+    <figure><img src="{{ img }}" alt="{{ title | striptags }} – image {{ loop.index }}" loading="lazy"></figure>
     {%- endfor %}
   </div>
 </div>
@@ -41,9 +41,9 @@ navKey: projects
 {% if video %}
 <div class="video">
   {%- if video.vimeo %}
-  <iframe src="https://player.vimeo.com/video/{{ video.vimeo }}?dnt=1" title="{{ title | striptags }} — video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe src="https://player.vimeo.com/video/{{ video.vimeo }}?dnt=1" title="{{ title | striptags }} – video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
   {%- elif video.youtube %}
-  <iframe src="https://www.youtube-nocookie.com/embed/{{ video.youtube }}" title="{{ title | striptags }} — video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ video.youtube }}" title="{{ title | striptags }} – video" allow="fullscreen; picture-in-picture" loading="lazy"></iframe>
   {%- endif %}
 </div>
 {% endif %}

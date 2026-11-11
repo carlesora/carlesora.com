@@ -7,7 +7,7 @@ category: "Transfer contract"
 summary: "Interactive web tutorial on how to write an academic paper, for the UPF library (CRAI)."
 facts:
   - { label: "Role", value: "Lead" }
-  - { label: "Partner", value: "Universitat Pompeu Fabra — CRAI library" }
+  - { label: "Partner", value: "Universitat Pompeu Fabra – CRAI library" }
   - { label: "Group", value: "Interactive Communication Lab, DIGIDOC research group" }
 ---
 An interactive online tutorial to help students prepare academic papers, designed for the CRAI library of the Universitat Pompeu Fabra by the Interactive Communication Lab (DIGIDOC research group).

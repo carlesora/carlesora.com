@@ -14,8 +14,8 @@ credits:
   - { role: Design of interactive media, name: Carles Sora }
   - { role: Coding, name: "Felip Ladrón, Carles F. Fernández, Daniel Gallardo" }
 related:
-  - { title: "Pensat per Touché — TV3 / 3Cat", url: "https://www.ccma.cat/3cat/pensat-per-touche/video/3349350/" }
-  - { title: "Museos de España, mucha gana de tecnología y poco arte tecnológico — El País" }
+  - { title: "Pensat per Touché – TV3 / 3Cat", url: "https://www.ccma.cat/3cat/pensat-per-touche/video/3349350/" }
+  - { title: "Museos de España, mucha gana de tecnología y poco arte tecnológico – El País" }
   - { title: "Avui investigues tu! La proposta experiencial del nou Museu de l’ICP. Mnemòsine, 6 (2011)." }
   - { title: "Learning about Palaeontology Through Interactive Games. In Museums at Play, MuseumsEtc (2011)." }
 ---

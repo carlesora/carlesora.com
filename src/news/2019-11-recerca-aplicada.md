@@ -2,7 +2,7 @@
 title: Recerca aplicada en Comunicació i Humanitats Digitals
 date: 2019-11-20
 tag: Research
-summary: A new practice-based research line in UPF’s PhD programme in Communication — the first of its kind in Spain.
+summary: A new practice-based research line in UPF’s PhD programme in Communication – the first of its kind in Spain.
 cover: /img/news/applied-media-studies.png
 ---
 Recentment, el Departament de Comunicació de la Universitat Pompeu Fabra ha creat una nova línia de recerca aplicada (Practice-based Research) dintre del seu programa de doctorat en Comunicació. He estat estretament vinculat a aquesta iniciativa des de la seva gestació fins la seva aprovació per part de la Universitat. Comparteixo en aquest post algunes reflexions i continguts que hem anat discutint durant el procés, i una notícia/entrevista publicada recentment sobre aquesta nova modalitat.

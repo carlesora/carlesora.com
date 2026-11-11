@@ -11,7 +11,7 @@ facts:
   - { label: Technology, value: Processing }
 credits:
   - { role: Artists, name: "Joan Fontcuberta & Ramon Parramon" }
-  - { role: Production, name: "ACVic — Carles Arumí, Carles Martín & Mar Sorribas" }
+  - { role: Production, name: "ACVic – Carles Arumí, Carles Martín & Mar Sorribas" }
   - { role: Creative coding (Processing), name: Carles Sora }
 ---
 Joan Fontcuberta’s exhibition *A través del mirall* (Through the Mirror) is a multi-projection of self-portraits that transforms the space into a stage saturated with images, overflowing the subjective image exposed on social networks.
