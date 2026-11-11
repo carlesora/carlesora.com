@@ -152,13 +152,3 @@ npm start        # vista prèvia a http://localhost:8080
 3. Quan GitHub hagi validat el domini, marca **Enforce HTTPS**.
 
 > ⚠️ Si tens el correu a @carlesora.com al mateix proveïdor, **no esborris els registres MX**, o deixarà de funcionar.
-
-## Pendents de revisar
-
-- [ ] AI&MUSIC: falta el text i una imatge (`src/projects/ai-music.md`).
-- [ ] Anys a confirmar: *L'Escala* (he posat 2013) i *Madonna de los deseos* (he posat 2008).
-- [ ] Docència posterior a 2019 (les publicacions ja venen d’ORCID). Revisar també els congressos posteriors a 2019, que no són a ORCID.
-- [ ] Enllaç de LinkedIn i el PDF del CV (a `site.json`).
-- [ ] Projectes sense imatge (surten amb línies): posar-ne a `src/img/projects/<nom>.jpg`. Revisar els textos dels projectes nous.
-- [ ] *PrometZeus* (2004), al CV però encara no al web.
-- [x] Correu de contacte: targeta Contact a l’About (`contact` a `site.json`).
