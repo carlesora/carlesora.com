@@ -13,6 +13,17 @@ crumbs: [{ label: "Background tests" }]
   .fons .lab{position:absolute;right:var(--pad);bottom:var(--pad);font-size:12px}
   .fons .bar{display:flex;justify-content:space-between;align-items:center;gap:var(--pad);padding:var(--pad);border-bottom:var(--rule)}
   .fons .bar button{font:inherit;background:none;color:inherit;border:var(--rule);padding:8px 14px;cursor:pointer;white-space:nowrap}
+  .lm{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:var(--rule)}
+  .lm > div{border-right:var(--rule);display:flex;flex-direction:column}
+  .lm > div:last-child{border-right:0}
+  .lm .mock{display:flex;height:72px;border-bottom:var(--rule)}
+  .lm .mock span{flex:1;display:flex;align-items:center;padding:0 var(--pad);font-size:21px;letter-spacing:-.01em}
+  .lm .mock i,.lm .big i{position:relative;display:block;overflow:hidden;width:40px;border-left:var(--rule)}
+  .lm .big{display:flex;gap:12px;padding:var(--pad);flex-wrap:wrap}
+  .lm .big i{width:60px;height:108px;border:var(--rule)}
+  .lm p{padding:0 var(--pad) var(--pad);font-size:14px;line-height:1.4}
+  .lm h3{padding:var(--pad) var(--pad) 6px;font-size:14px;font-weight:400;text-transform:uppercase}
+  @media (max-width:860px){.lm{grid-template-columns:1fr 1fr}}
   @media (max-width:860px){.fons .bg{min-height:340px}}
 </style>
 
@@ -20,6 +31,23 @@ crumbs: [{ label: "Background tests" }]
   <h1 class="title">Background tests</h1>
 </section>
 <div class="fons">
+  <div class="bar"><p><b>Logo mark.</b> Four proposals for the box next to CARLESORA: Mondrian-style straight lines with the colours of the circles. Each visit draws a new layout; top is the real size, below are three samples, larger.</p>
+    <button type="button" class="caps" data-remondrian>Draw again</button></div>
+  <div class="lm">
+    {%- set props = [
+      ["m1", "1 — One colour cell", "Black lines cut the box into rectangles; one cell is coral."],
+      ["m2", "2 — Three warm cells (logo)", "Two or three lines, at most three columns and three rows; up to three cells in coral, orange and peach."],
+      ["m3", "3 — Coloured lines", "No fills: the lines themselves are coral and orange, a little thicker."],
+      ["m4", "4 — Grid over circles", "Two small overlapping discs under the black grid, echoing the backgrounds."]
+    ] %}
+    {%- for pr in props %}
+    <div>
+      <div class="mock"><span>CARLESORA</span><i><svg class="lines" data-mondrian="{{ pr[0] }}" preserveAspectRatio="none" aria-hidden="true"></svg></i></div>
+      <h3>{{ pr[1] }}</h3><p>{{ pr[2] }}</p>
+      <div class="big">{% for k in range(3) %}<i><svg class="lines" data-mondrian="{{ pr[0] }}" preserveAspectRatio="none" aria-hidden="true"></svg></i>{% endfor %}</div>
+    </div>
+    {%- endfor %}
+  </div>
   <div class="bar"><p>Every visit draws new circles. B is the one on the home page; the others are kept for later.</p>
     <button type="button" class="caps" data-regen=".fons [data-gen]">Draw again</button></div>
   {%- set title %}<h2 class="t">Digital design,<br>new narratives<br>&amp; creative tech.</h2>{% endset %}

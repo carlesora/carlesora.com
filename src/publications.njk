@@ -33,6 +33,6 @@ summary: Books, journal articles, book chapters, conference papers and essays.
   </div>
   {%- endfor %}
 </section>
-<section class="metrics-sec">
-  {{ m.metrics(site, true) }}
-</section>
+{%- for l in site.links %}{% if l.label == "Google Scholar" and l.url %}
+<p class="metrics-line caps scholar-link"><a href="{{ l.url }}">Google Scholar ↗&#xFE0E;</a></p>
+{%- endif %}{% endfor %}

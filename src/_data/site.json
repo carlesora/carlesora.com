@@ -70,5 +70,6 @@
       }
     ]
   },
-  "contact": "carlesora at proton dot me"
+  "contact": "carlesora at proton dot me",
+  "noindex": true
 }

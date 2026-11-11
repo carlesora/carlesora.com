@@ -378,3 +378,5 @@ footer{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:24px;align-items
   :root:not([data-theme="light"]) .bg.b .c{mix-blend-mode:screen}
 }
 @media (prefers-reduced-motion:reduce){.bg .c{transition:none}}
+.lm svg,.logo .mark svg{overflow:hidden}
+.scholar-link{padding:var(--pad);margin:0;text-align:right}

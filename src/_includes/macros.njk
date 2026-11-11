@@ -38,7 +38,7 @@
   <span class="year">{{ p.year }}</span>
   <div>
     <h4>{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h4>
-    <p>{{ p.authors }}{% if p.venue %} — <i>{{ p.venue }}</i>{% endif %}{% if p.url %} <a class="ext" href="{{ p.url }}">Link ↗</a>{% endif %}</p>
+    <p>{{ p.authors }}{% if p.venue %} — <i>{{ p.venue }}</i>{% endif %}{% if p.url %} <a class="ext" href="{{ p.url }}">Link ↗&#xFE0E;</a>{% endif %}</p>
   </div>
   <span class="type caps">{{ pubLabels[p.type] }}</span>
 </li>
@@ -50,11 +50,11 @@
 {%- set scholar = "" -%}{%- for l in site.links %}{% if l.label == "Google Scholar" %}{% set scholar = l.url %}{% endif %}{% endfor -%}
 {%- if mt and mt.items[0].value -%}
 {%- if compact -%}
-<p class="metrics-line caps">{% for x in mt.items %}{% if x.value %}{{ x.label }} {{ x.value }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %} — {% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗</a>{% else %}{{ mt.source }}{% endif %}</p>
+<p class="metrics-line caps">{% for x in mt.items %}{% if x.value %}{{ x.label }} {{ x.value }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %} — {% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗&#xFE0E;</a>{% else %}{{ mt.source }}{% endif %}</p>
 {%- else -%}
 <div class="clip"><dl class="metrics">
   {%- for x in mt.items %}{% if x.value %}<div><dt>{{ x.label }}</dt><dd>{{ x.value }}</dd></div>{% endif %}{% endfor %}
-  <div class="src"><dt>Source</dt><dd>{% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗</a>{% else %}{{ mt.source }}{% endif %}{% if mt.updated %}<span>Updated {{ mt.updated }}</span>{% endif %}</dd></div>
+  <div class="src"><dt>Source</dt><dd>{% if scholar %}<a href="{{ scholar }}">{{ mt.source }} ↗&#xFE0E;</a>{% else %}{{ mt.source }}{% endif %}{% if mt.updated %}<span>Updated {{ mt.updated }}</span>{% endif %}</dd></div>
 </dl></div>
 {%- endif -%}
 {%- endif -%}

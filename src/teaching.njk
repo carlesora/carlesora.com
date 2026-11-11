@@ -15,8 +15,8 @@ crumbs: [{ label: "Research & Teaching" }]
   <div class="clip">
     <div class="courses">
       {%- for c in teaching.current %}
-      <div class="course{% if c.wide %} wide{% endif %}"><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗</a>{% endif %}</p>
-        {%- if c.groups %}<dl class="review">{% for g in c.groups %}<dt class="caps">{{ g.label }}</dt><dd>{{ g.text }}{% if g.url %} <a class="ext" href="{{ g.url }}">Website ↗</a>{% endif %}</dd>{% endfor %}</dl>{% endif -%}
+      <div class="course{% if c.wide %} wide{% endif %}"><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗&#xFE0E;</a>{% endif %}</p>
+        {%- if c.groups %}<dl class="review">{% for g in c.groups %}<dt class="caps">{{ g.label }}</dt><dd>{{ g.text }}{% if g.url %} <a class="ext" href="{{ g.url }}">Website ↗&#xFE0E;</a>{% endif %}</dd>{% endfor %}</dl>{% endif -%}
       </div>
       {%- endfor %}
     </div>
@@ -57,7 +57,7 @@ crumbs: [{ label: "Research & Teaching" }]
   <div class="sec-title"><h2>Past positions</h2></div>
   <ul class="rows">
     {%- for c in teaching.past %}
-    <li><span class="caps">{{ c.years }}</span><div><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗</a>{% endif %}</p></div></li>
+    <li><span class="caps">{{ c.years }}</span><div><h3>{{ c.role }}</h3><p>{{ c.where }}{% if c.url %} <a class="ext" href="{{ c.url }}">Website ↗&#xFE0E;</a>{% endif %}</p></div></li>
     {%- endfor %}
   </ul>
 </section>

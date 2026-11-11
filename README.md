@@ -120,7 +120,7 @@ Google Scholar no deixa llegir les dades automàticament, així que s'actualitze
 }
 ```
 
-Surten en una línia petita al final de la pàgina Publications i a la portada. Si l'h-index és buit, no surt res. L'enllaç "Google Scholar" és el de `links`.
+Ara mateix **no es mostren** enlloc: la portada i la pàgina Publications només tenen l'enllaç "Google Scholar ↗" (el de `links`). Si les vols tornar a mostrar, posa `{{ m.metrics(site, true) }}` on vulguis que surtin (macro a `src/_includes/macros.njk`).
 
 ## Editar des de la web de GitHub (sense instal·lar res)
 

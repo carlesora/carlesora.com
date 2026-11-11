@@ -50,12 +50,14 @@ title: Digital design, new narratives & creative tech
 
 <section id="publications">
   <div class="sec-title"><h2>Publications</h2><a class="caps" href="/publications/">All publications →</a></div>
-  {{ m.metrics(site, true) }}
   <ul>
     {%- for p in publications | limit(4) %}
     {{ m.pub(p) }}
     {%- endfor %}
   </ul>
+  {%- for l in site.links %}{% if l.label == "Google Scholar" and l.url %}
+  <p class="metrics-line caps scholar-link"><a href="{{ l.url }}">Google Scholar ↗&#xFE0E;</a></p>
+  {%- endif %}{% endfor %}
 </section>
 
 <section id="teaching">

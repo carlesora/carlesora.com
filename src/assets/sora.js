@@ -81,18 +81,57 @@ document.querySelectorAll('[data-variants]').forEach(el=>{
 document.querySelectorAll('[data-gen]').forEach(generate);
 document.querySelectorAll('[data-regen]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll(b.dataset.regen).forEach(generate)));
 
-// Logo mark (box next to the name): on every visit, one of the line drawings used on the project cards
-// (same six patterns as lines() in _includes/macros.njk).
-const mark=document.getElementById('mark');
-if(mark){
-  const L=[
-    [[0,0,100,100],[0,100,100,0]],
-    [[20,0,20,100],[20,100,100,20]],
-    [[0,60,100,60],[10,0,70,100]],
-    [[0,100,60,0],[60,0,60,100]],
-    [[0,30,100,30],[50,30,50,100]],
-    [[0,0,100,70],[100,70,100,100]]
-  ];
-  mark.setAttribute('viewBox','0 0 100 100');
-  mark.innerHTML=L[Math.floor(Math.random()*L.length)].map(([a,b,c,d])=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}"/>`).join('');
+// Mondrian marks (proposals on /fons/): <svg data-mondrian="m1|m2|m3|m4"> is cut into rectangles by
+// straight lines and a few cells take the colours of the background circles. New layout on every visit.
+const MCOL=['#ef5a3c','#f39a45','#f6c9a8'];
+function mondrian(svg){
+  const v=svg.dataset.mondrian,W=40,H=72,U=4; // 4px grid keeps lines crisp
+  const leaves=[],lines=[];
+  if(v==='m2'){ // at most 3 columns and 3 rows: no more than two x and two y positions for the lines
+    const xs=[],ys=[],maxLines=2+Math.floor(Math.random()*2); // 2–3 lines
+    const pos=(arr,a,len)=>{ // reuse a position inside the rect, or a new one if fewer than two exist
+      const inside=arr.filter(p=>p>a+6&&p<a+len-6);
+      if(inside.length&&(arr.length>=2||Math.random()<.5))return inside[Math.floor(Math.random()*inside.length)];
+      if(arr.length>=2||len<16)return null;
+      const p=a+U*Math.round(len*(.3+Math.random()*.4)/U);arr.push(p);return p;
+    };
+    (function cut(x,y,w,h,first){
+      if(lines.length>=maxLines||(!first&&lines.length>=2&&Math.random()<.3)){leaves.push([x,y,w,h]);return}
+      const tryV=Math.random()<w/(w+h*.8);
+      for(const vert of [tryV,!tryV]){
+        const p=vert?pos(xs,x,w):pos(ys,y,h);
+        if(p==null)continue;
+        if(vert){lines.push([p,y,p,y+h]);const [r1,r2]=Math.random()<.5?[[x,y,p-x,h],[p,y,x+w-p,h]]:[[p,y,x+w-p,h],[x,y,p-x,h]];cut(...r1,false);cut(...r2,false)}
+        else{lines.push([x,p,x+w,p]);const [r1,r2]=Math.random()<.5?[[x,y,w,p-y],[x,p,w,y+h-p]]:[[x,p,w,y+h-p],[x,y,w,p-y]];cut(...r1,false);cut(...r2,false)}
+        return;
+      }
+      leaves.push([x,y,w,h]);
+    })(0,0,W,H,true);
+  }else (function cut(x,y,w,h,d){
+    const canV=w>=16,canH=h>=16;
+    if(d===0||(!canV&&!canH)||(d<3&&Math.random()<.25)){leaves.push([x,y,w,h]);return}
+    const vert=canV&&(!canH||Math.random()<w/(w+h)); // long sides get cut more often
+    const len=vert?w:h,at=U*Math.round((len*(.3+Math.random()*.4))/U);
+    if(vert){lines.push([x+at,y,x+at,y+h]);cut(x,y,at,h,d-1);cut(x+at,y,w-at,h,d-1)}
+    else{lines.push([x,y+at,x+w,y+at]);cut(x,y,w,at,d-1);cut(x,y+at,w,h-at,d-1)}
+  })(0,0,W,H,3);
+  const pick=n=>[...leaves].sort(()=>Math.random()-.5).slice(0,n);
+  let fills='',extra='',stroke='var(--line)';
+  if(v==='m1')fills=pick(1).map(([x,y,w,h])=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${MCOL[0]}"/>`).join('');
+  if(v==='m2')fills=pick(Math.min(3,leaves.length-1)).map(([x,y,w,h],i)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${MCOL[i]}"/>`).join('');
+  if(v==='m3')stroke=null; // coloured lines, no fills
+  if(v==='m4'){ // two overlapping discs under the grid, like the backgrounds
+    const r1=12+Math.random()*8,r2=r1*(.7+Math.random()*.3),cx=8+Math.random()*24,cy=14+Math.random()*44,a=Math.random()*6.28,d=(r1+r2)*.55;
+    const id='mclip'+Math.random().toString(36).slice(2,8);
+    extra=`<clipPath id="${id}"><rect width="${W}" height="${H}"/></clipPath><g clip-path="url(#${id})"><circle cx="${cx}" cy="${cy}" r="${r1}" fill="${MCOL[0]}"/><circle cx="${cx+Math.cos(a)*d}" cy="${cy+Math.sin(a)*d}" r="${r2}" fill="${MCOL[1]}" style="mix-blend-mode:multiply"/></g>`;
+  }
+  const ls=lines.map(([x1,y1,x2,y2],i)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${stroke||MCOL[i%2]}${stroke?'':';stroke-width:2'}"/>`).join('');
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML=extra+fills+ls;
 }
+document.querySelectorAll('svg[data-mondrian]').forEach(mondrian);
+document.querySelectorAll('[data-remondrian]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('svg[data-mondrian]').forEach(mondrian)));
+
+// Logo mark (box next to the name): Mondrian layout (m2) drawn again on every visit.
+const mark=document.getElementById('mark');
+if(mark){mark.dataset.mondrian='m2';mondrian(mark)}

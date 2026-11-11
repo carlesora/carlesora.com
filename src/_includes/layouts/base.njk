@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if title and not isHome %}{{ title | striptags }} — {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ (summary or site.description) | striptags }}">
+{%- if site.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 <meta property="og:title" content="{{ (title or site.title) | striptags }}">
 <meta property="og:description" content="{{ (summary or site.description) | striptags }}">
 {% if cover %}<meta property="og:image" content="{{ site.url }}{{ cover }}">{% endif %}
